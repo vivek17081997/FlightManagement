@@ -1657,10 +1657,17 @@
         },
         "runtime": {
           "bin/placeholder/FlightManagementSystem.DAL.dll": {}
+        }
+      },
+      "FlightMangementSystem.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/FlightMangementSystem.Models.dll": {}
         },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        "runtime": {
+          "bin/placeholder/FlightMangementSystem.Models.dll": {}
+        }
       }
     }
   },
@@ -6008,12 +6015,18 @@
       "type": "project",
       "path": "../FlightManagementSystem.DAL/FlightManagementSystem.DAL.csproj",
       "msbuildProject": "../FlightManagementSystem.DAL/FlightManagementSystem.DAL.csproj"
+    },
+    "FlightMangementSystem.Models/1.0.0": {
+      "type": "project",
+      "path": "../FlightMangementSystem.Models/FlightMangementSystem.Models.csproj",
+      "msbuildProject": "../FlightMangementSystem.Models/FlightMangementSystem.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "FlightManagementSystem.BAL >= 1.0.0",
       "FlightManagementSystem.DAL >= 1.0.0",
+      "FlightMangementSystem.Models >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 3.1.11",
       "Microsoft.EntityFrameworkCore >= 5.0.6",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.2",
@@ -6029,11 +6042,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Vivek\\Desktop\\Machine Exercise\\FlightManagementSystem\\FlightManagementSystem\\FlightManagementSystem.csproj",
+      "projectUniqueName": "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem\\FlightManagementSystem.csproj",
       "projectName": "FlightManagementSystem",
-      "projectPath": "C:\\Users\\Vivek\\Desktop\\Machine Exercise\\FlightManagementSystem\\FlightManagementSystem\\FlightManagementSystem.csproj",
+      "projectPath": "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem\\FlightManagementSystem.csproj",
       "packagesPath": "C:\\Users\\Vivek\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Vivek\\Desktop\\Machine Exercise\\FlightManagementSystem\\FlightManagementSystem\\obj\\",
+      "outputPath": "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
@@ -6053,12 +6066,16 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Vivek\\Desktop\\Machine Exercise\\FlightManagementSystem\\FlightManagementSystem.BAL\\FlightManagementSystem.BAL.csproj": {
-              "projectPath": "C:\\Users\\Vivek\\Desktop\\Machine Exercise\\FlightManagementSystem\\FlightManagementSystem.BAL\\FlightManagementSystem.BAL.csproj"
+            "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem.BAL\\FlightManagementSystem.BAL.csproj": {
+              "projectPath": "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem.BAL\\FlightManagementSystem.BAL.csproj"
             },
-            "C:\\Users\\Vivek\\Desktop\\Machine Exercise\\FlightManagementSystem\\FlightManagementSystem.DAL\\FlightManagementSystem.DAL.csproj": {
-              "projectPath": "C:\\Users\\Vivek\\Desktop\\Machine Exercise\\FlightManagementSystem\\FlightManagementSystem.DAL\\FlightManagementSystem.DAL.csproj"
+            "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem.DAL\\FlightManagementSystem.DAL.csproj": {
+              "projectPath": "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem.DAL\\FlightManagementSystem.DAL.csproj"
+            },
+            "E:\\MachineExercise\\FlightManagement\\FlightMangementSystem.Models\\FlightMangementSystem.Models.csproj": {
+              "projectPath": "E:\\MachineExercise\\FlightManagement\\FlightMangementSystem.Models\\FlightMangementSystem.Models.csproj"
             }
           }
         }
@@ -6071,6 +6088,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
@@ -6113,7 +6131,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
