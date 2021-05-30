@@ -1,0 +1,7 @@
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightMangementSystem.Models\bin\Debug\netcoreapp3.1\FlightMangementSystem.Models.deps.json
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightMangementSystem.Models\bin\Debug\netcoreapp3.1\FlightMangementSystem.Models.dll
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightMangementSystem.Models\bin\Debug\netcoreapp3.1\FlightMangementSystem.Models.pdb
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightMangementSystem.Models\obj\Debug\netcoreapp3.1\FlightMangementSystem.Models.AssemblyInfoInputs.cache
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightMangementSystem.Models\obj\Debug\netcoreapp3.1\FlightMangementSystem.Models.AssemblyInfo.cs
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightMangementSystem.Models\obj\Debug\netcoreapp3.1\FlightMangementSystem.Models.dll
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightMangementSystem.Models\obj\Debug\netcoreapp3.1\FlightMangementSystem.Models.pdb

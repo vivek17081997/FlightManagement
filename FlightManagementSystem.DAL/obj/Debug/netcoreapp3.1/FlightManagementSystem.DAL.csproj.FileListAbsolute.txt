@@ -1,0 +1,10 @@
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.DAL\bin\Debug\netcoreapp3.1\FlightManagementSystem.DAL.deps.json
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.DAL\bin\Debug\netcoreapp3.1\FlightManagementSystem.DAL.dll
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.DAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.DAL.AssemblyInfoInputs.cache
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.DAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.DAL.AssemblyInfo.cs
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.DAL\bin\Debug\netcoreapp3.1\FlightManagementSystem.DAL.runtimeconfig.json
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.DAL\bin\Debug\netcoreapp3.1\FlightManagementSystem.DAL.runtimeconfig.dev.json
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.DAL\bin\Debug\netcoreapp3.1\FlightManagementSystem.DAL.pdb
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.DAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.DAL.dll
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.DAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.DAL.pdb
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.DAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.DAL.csprojAssemblyReference.cache

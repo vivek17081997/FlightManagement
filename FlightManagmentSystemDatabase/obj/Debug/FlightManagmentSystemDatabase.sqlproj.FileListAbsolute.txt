@@ -1,0 +1,5 @@
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagmentSystemDatabase\bin\Debug\FlightManagmentSystemDatabase.dacpac
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagmentSystemDatabase\bin\Debug\FlightManagmentSystemDatabase.dll
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagmentSystemDatabase\bin\Debug\FlightManagmentSystemDatabase.pdb
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagmentSystemDatabase\obj\Debug\FlightManagmentSystemDatabase.dll
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagmentSystemDatabase\obj\Debug\FlightManagmentSystemDatabase.pdb

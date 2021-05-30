@@ -1,0 +1,76 @@
+30-05-2021 20:22:37	This log contains information about the import schema operation into project 'FlightManagmentSystemDatabase' on computer 'DESKTOP-AEBK0EF' by user 'Vivek'.
+30-05-2021 20:22:38	Import of database schema has started.
+30-05-2021 20:22:45	Gathering database options
+30-05-2021 20:22:45	Gathering users
+30-05-2021 20:22:45	Gathering roles
+30-05-2021 20:22:45	Gathering application roles
+30-05-2021 20:22:45	Gathering role memberships
+30-05-2021 20:22:45	Gathering filegroups
+30-05-2021 20:22:45	Gathering full-text catalogs
+30-05-2021 20:22:45	Gathering assemblies
+30-05-2021 20:22:45	Gathering certificates
+30-05-2021 20:22:45	Gathering asymmetric keys
+30-05-2021 20:22:45	Gathering symmetric keys
+30-05-2021 20:22:45	Gathering encrypted symmetric keys
+30-05-2021 20:22:45	Gathering schemas
+30-05-2021 20:22:45	Gathering XML schema collections
+30-05-2021 20:22:45	Gathering user-defined data types
+30-05-2021 20:22:45	Gathering user-defined types
+30-05-2021 20:22:45	Gathering table types
+30-05-2021 20:22:45	Gathering unique keys for table types
+30-05-2021 20:22:45	Gathering primary keys for table types
+30-05-2021 20:22:45	Gathering check constraints for table types
+30-05-2021 20:22:45	Gathering default constraints for table types
+30-05-2021 20:22:45	Gathering partition functions
+30-05-2021 20:22:45	Gathering partition schemes
+30-05-2021 20:22:45	Gathering functions
+30-05-2021 20:22:45	Gathering encrypted functions
+30-05-2021 20:22:45	Gathering aggregates
+30-05-2021 20:22:45	Gathering procedures
+30-05-2021 20:22:45	Gathering encrypted procedures
+30-05-2021 20:22:45	Gathering tables
+30-05-2021 20:22:46	Gathering primary keys
+30-05-2021 20:22:46	Gathering unique constraints
+30-05-2021 20:22:46	Gathering foreign keys
+30-05-2021 20:22:46	Gathering default constraints
+30-05-2021 20:22:46	Gathering check constraints
+30-05-2021 20:22:46	Gathering views
+30-05-2021 20:22:46	Gathering encrypted views
+30-05-2021 20:22:46	Gathering indexes
+30-05-2021 20:22:46	Gathering statistics
+30-05-2021 20:22:46	Gathering full-text index stoplists
+30-05-2021 20:22:46	Gathering search property lists
+30-05-2021 20:22:46	Gathering search properties
+30-05-2021 20:22:46	Gathering full-text indexes
+30-05-2021 20:22:46	Gathering column store indexes
+30-05-2021 20:22:46	Gathering spatial indexes
+30-05-2021 20:22:46	Gathering XML indexes
+30-05-2021 20:22:46	Gathering Selective XML indexes
+30-05-2021 20:22:46	Gathering encrypted triggers
+30-05-2021 20:22:46	Gathering triggers
+30-05-2021 20:22:46	Gathering encrypted and clr ddl triggers
+30-05-2021 20:22:46	Gathering ddl triggers
+30-05-2021 20:22:46	Gathering synonyms
+30-05-2021 20:22:46	Gathering defaults
+30-05-2021 20:22:46	Gathering data constraint uddt bindings
+30-05-2021 20:22:46	Gathering rules
+30-05-2021 20:22:46	Gathering data constraint uddt bindings
+30-05-2021 20:22:46	Gathering message types
+30-05-2021 20:22:46	Gathering queues
+30-05-2021 20:22:46	Gathering contracts
+30-05-2021 20:22:46	Gathering services
+30-05-2021 20:22:46	Gathering event notifications
+30-05-2021 20:22:46	Gathering remote service bindings
+30-05-2021 20:22:46	Gathering broker priorities
+30-05-2021 20:22:46	Gathering signatures
+30-05-2021 20:22:46	Gathering data compression options
+30-05-2021 20:22:46	Gathering sequence types
+30-05-2021 20:22:46	Gathering extended properties
+30-05-2021 20:22:47	Gathering credentials
+30-05-2021 20:22:47	Gathering logins
+30-05-2021 20:22:47	Gathering server audits
+30-05-2021 20:22:48	Scanning project for duplicate elements
+30-05-2021 20:22:48	Finished duplicate element processing
+30-05-2021 20:22:49	Finished importing database.
+30-05-2021 20:22:49	A summary of the import was saved to the following location: C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagmentSystemDatabase\Import Schema Logs\FlightManagmentSyste_20210530025237.log
+30-05-2021 20:22:49	Click Finish to continue...

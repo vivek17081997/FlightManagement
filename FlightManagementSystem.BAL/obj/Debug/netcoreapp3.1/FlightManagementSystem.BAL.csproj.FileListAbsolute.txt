@@ -1,0 +1,7 @@
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.BAL\bin\Debug\netcoreapp3.1\FlightManagementSystem.BAL.deps.json
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.BAL\bin\Debug\netcoreapp3.1\FlightManagementSystem.BAL.dll
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.BAL\bin\Debug\netcoreapp3.1\FlightManagementSystem.BAL.pdb
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.BAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.BAL.AssemblyInfoInputs.cache
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.BAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.BAL.AssemblyInfo.cs
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.BAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.BAL.dll
+C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.BAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.BAL.pdb
