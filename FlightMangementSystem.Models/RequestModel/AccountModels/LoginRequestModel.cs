@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace FlightMangementSystem.Models.RequestModel.AccountModels
 {
@@ -15,7 +16,7 @@ namespace FlightMangementSystem.Models.RequestModel.AccountModels
 		/// </summary>
 		[Required]
 		[EmailAddress]
-		[Display(Name = "Email")]
+		[JsonPropertyName("email")]
 		public string Email { get; set; }
 
 		/// <summary>
@@ -24,7 +25,7 @@ namespace FlightMangementSystem.Models.RequestModel.AccountModels
 		[Required]
 		[StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
 		[DataType(DataType.Password)]
-		[Display(Name = "Password")]
+		[JsonPropertyName("password")]
 		public string Password { get; set; }
 	}
 }

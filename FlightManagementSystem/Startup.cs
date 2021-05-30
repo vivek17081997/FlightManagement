@@ -51,13 +51,18 @@ namespace FlightManagementSystem
 
 			app.UseHttpsRedirection();
 
+			app.UseSwagger();
+			
+
 			app.UseRouting();
 
 			app.UseAuthentication();
 			app.UseAuthorization();
 
+			
 			app.UseSwagger();
-			app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "Flight Management System"));
+			app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "Flight Management Systems"));
+
 
 			app.UseEndpoints(endpoints =>
 			{

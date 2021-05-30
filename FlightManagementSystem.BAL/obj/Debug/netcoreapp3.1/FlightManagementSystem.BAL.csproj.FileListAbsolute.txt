@@ -5,3 +5,15 @@ C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementS
 C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.BAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.BAL.AssemblyInfo.cs
 C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.BAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.BAL.dll
 C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.BAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.BAL.pdb
+E:\MachineExercise\FlightManagement\FlightManagementSystem.BAL\bin\Debug\netcoreapp3.1\FlightManagementSystem.BAL.deps.json
+E:\MachineExercise\FlightManagement\FlightManagementSystem.BAL\bin\Debug\netcoreapp3.1\FlightManagementSystem.BAL.dll
+E:\MachineExercise\FlightManagement\FlightManagementSystem.BAL\bin\Debug\netcoreapp3.1\FlightManagementSystem.BAL.pdb
+E:\MachineExercise\FlightManagement\FlightManagementSystem.BAL\bin\Debug\netcoreapp3.1\FlightMangementSystem.Models.dll
+E:\MachineExercise\FlightManagement\FlightManagementSystem.BAL\bin\Debug\netcoreapp3.1\FlightMangementSystem.Models.pdb
+E:\MachineExercise\FlightManagement\FlightManagementSystem.BAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.BAL.csprojAssemblyReference.cache
+E:\MachineExercise\FlightManagement\FlightManagementSystem.BAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.BAL.AssemblyInfoInputs.cache
+E:\MachineExercise\FlightManagement\FlightManagementSystem.BAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.BAL.AssemblyInfo.cs
+E:\MachineExercise\FlightManagement\FlightManagementSystem.BAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.BAL.csproj.CoreCompileInputs.cache
+E:\MachineExercise\FlightManagement\FlightManagementSystem.BAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.BAL.csproj.CopyComplete
+E:\MachineExercise\FlightManagement\FlightManagementSystem.BAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.BAL.dll
+E:\MachineExercise\FlightManagement\FlightManagementSystem.BAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.BAL.pdb

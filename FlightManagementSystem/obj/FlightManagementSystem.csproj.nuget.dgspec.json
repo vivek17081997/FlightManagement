@@ -32,7 +32,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "E:\\MachineExercise\\FlightManagement\\FlightMangementSystem.Models\\FlightMangementSystem.Models.csproj": {
+                "projectPath": "E:\\MachineExercise\\FlightManagement\\FlightMangementSystem.Models\\FlightMangementSystem.Models.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -44,6 +48,20 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.11.1, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.11.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

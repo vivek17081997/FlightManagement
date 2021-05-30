@@ -8,3 +8,15 @@ C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementS
 C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.DAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.DAL.dll
 C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.DAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.DAL.pdb
 C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagementSystem.DAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.DAL.csprojAssemblyReference.cache
+E:\MachineExercise\FlightManagement\FlightManagementSystem.DAL\bin\Debug\netcoreapp3.1\FlightManagementSystem.DAL.deps.json
+E:\MachineExercise\FlightManagement\FlightManagementSystem.DAL\bin\Debug\netcoreapp3.1\FlightManagementSystem.DAL.runtimeconfig.json
+E:\MachineExercise\FlightManagement\FlightManagementSystem.DAL\bin\Debug\netcoreapp3.1\FlightManagementSystem.DAL.runtimeconfig.dev.json
+E:\MachineExercise\FlightManagement\FlightManagementSystem.DAL\bin\Debug\netcoreapp3.1\FlightManagementSystem.DAL.dll
+E:\MachineExercise\FlightManagement\FlightManagementSystem.DAL\bin\Debug\netcoreapp3.1\FlightManagementSystem.DAL.pdb
+E:\MachineExercise\FlightManagement\FlightManagementSystem.DAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.DAL.csprojAssemblyReference.cache
+E:\MachineExercise\FlightManagement\FlightManagementSystem.DAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.DAL.AssemblyInfoInputs.cache
+E:\MachineExercise\FlightManagement\FlightManagementSystem.DAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.DAL.AssemblyInfo.cs
+E:\MachineExercise\FlightManagement\FlightManagementSystem.DAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.DAL.csproj.CoreCompileInputs.cache
+E:\MachineExercise\FlightManagement\FlightManagementSystem.DAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.DAL.dll
+E:\MachineExercise\FlightManagement\FlightManagementSystem.DAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.DAL.pdb
+E:\MachineExercise\FlightManagement\FlightManagementSystem.DAL\obj\Debug\netcoreapp3.1\FlightManagementSystem.DAL.genruntimeconfig.cache
