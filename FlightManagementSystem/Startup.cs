@@ -51,9 +51,6 @@ namespace FlightManagementSystem
 
 			app.UseHttpsRedirection();
 
-			app.UseSwagger();
-			
-
 			app.UseRouting();
 
 			app.UseAuthentication();
