@@ -33,6 +33,9 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
+              "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem.DAL\\FlightManagementSystem.DAL.csproj": {
+                "projectPath": "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem.DAL\\FlightManagementSystem.DAL.csproj"
+              },
               "E:\\MachineExercise\\FlightManagement\\FlightMangementSystem.Models\\FlightMangementSystem.Models.csproj": {
                 "projectPath": "E:\\MachineExercise\\FlightManagement\\FlightMangementSystem.Models\\FlightMangementSystem.Models.csproj"
               }
@@ -217,6 +220,12 @@
               "target": "Package",
               "version": "[3.1.11, )"
             },
+            "Microsoft.CodeAnalysis.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.3.2, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.6, )"
@@ -230,6 +239,16 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.2, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "SonarAnalyzer.CSharp": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.23.0.32424, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

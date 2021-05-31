@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace FlightManagementSystem.Utilities
 {
-	public class Constants
+	public static class Constants
 	{
 		#region for api routes constants 
 
@@ -15,9 +15,10 @@ namespace FlightManagementSystem.Utilities
 
 		#endregion
 
-		#region Common validation 
 
-		public const string Invalid_LoginRequest_Parameters = "Invalid email or password";
+		#region Common validation messages
+
+		public const string Invalid_LoginRequest_Parameters = "Invalid email or password.";
 
 		#endregion
 	}

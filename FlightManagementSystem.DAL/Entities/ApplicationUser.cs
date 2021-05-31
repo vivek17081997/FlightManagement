@@ -15,12 +15,11 @@ namespace FlightManagementSystem.DAL.Entities
         public override string PhoneNumber { get; set; }
         public long CreatedBy { get; set; }
         public DateTime CreatedDate { get; set; }
-        public long ModifyBy { get; set; }
-        public DateTime Modifydate { get; set; }
-        public long DeletedBy { get; set; }
-        public DateTime DeletedDate { get; set; }
-        public bool IsDeleted { get; set; }
+        public long? ModifyBy { get; set; }
+        public DateTime? Modifydate { get; set; }
+        public long? DeletedBy { get; set; }
+        public DateTime? DeletedDate { get; set; }
+        public bool? IsDeleted { get; set; }
         public bool IsActive { get; set; }
-
     }
 }
