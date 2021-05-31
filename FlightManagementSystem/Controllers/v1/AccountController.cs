@@ -21,7 +21,7 @@ namespace FlightManagementSystem.Controllers.v1
 	[Route("api/v1/[controller]")]
 	public class AccountController : BaseController
 	{
-		ApiResponse<LoginResponseModel> _apiResponse = null;
+		ApiResponse<LoginResponseModel> _apiLoginResponse = null;
 		private readonly ILogger<AccountController> _logger;
 		private readonly IAccountServices _accountService;
 		private readonly IJwtAuthManager _jwtAuthManager;
@@ -41,19 +41,19 @@ namespace FlightManagementSystem.Controllers.v1
 		[Route(Constants.LoginRoute)]
 		public ActionResult Login([FromBody] LoginRequestModel request)
 		{
-
+			if (_apiLoginResponse == null)
+			{
+				_apiLoginResponse = new ApiResponse<LoginResponseModel>();
+			}
 			try
 			{
-				if (_apiResponse == null)
-				{
-					_apiResponse = new ApiResponse<LoginResponseModel>();
-				}
+				
 				if (!ModelState.IsValid)
 				{
-					_apiResponse.ResponseMessage = "Invalid email or password";
-					_apiResponse.ResponseData = null;
-					_apiResponse.ResponseStatusCode = HttpStatusCode.BadRequest;
-					return BadRequest(_apiResponse);
+					_apiLoginResponse.ResponseMessage = Constants.Invalid_LoginRequest_Parameters;
+					_apiLoginResponse.ResponseData = null;
+					_apiLoginResponse.ResponseStatusCode = HttpStatusCode.BadRequest;
+					return BadRequest(_apiLoginResponse);
 				}
 
 				if (!_accountService.IsValidUserCredentials(request.Email, request.Password))
@@ -72,13 +72,18 @@ namespace FlightManagementSystem.Controllers.v1
 
 				var jwtResult = _jwtAuthManager.GenerateTokens(request.Email, claims, DateTime.Now);
 				_logger.LogInformation($"Email [{request.Email}] logged in the system.");
-				return Ok(new LoginResponseModel
+				LoginResponseModel model = new LoginResponseModel
 				{
 					Email = request.Email,
 					UserRole = role,
 					Token = jwtResult.AccessToken,
 					RefreshToken = jwtResult.RefreshToken.TokenString
-				});
+				};
+				_apiLoginResponse.ResponseStatusCode = HttpStatusCode.OK;
+				_apiLoginResponse.ResponseMessage = "Success";
+				_apiLoginResponse.ResponseData = model;
+
+				return Ok(_apiLoginResponse) ;
 
 			}
 			catch (Exception ex)
@@ -94,7 +99,8 @@ namespace FlightManagementSystem.Controllers.v1
 		/// </summary>
 		/// <param name="request"></param>
 		/// <returns></returns>
-		[Route("refresh-token")]
+		[Route(Constants.RefreshToken)]
+		[AllowAnonymous]
 		[HttpPost]
 		public async Task<ActionResult> RefreshToken([FromBody] RefreshTokenRequestModel request)
 		{
@@ -121,7 +127,7 @@ namespace FlightManagementSystem.Controllers.v1
 			}
 			catch (SecurityTokenException e)
 			{
-				// return 401 so that the client side can redirect the user to login page
+				//returned 401 so that the client side can redirect the user to login page
 				return Unauthorized(e.Message);
 			}
 		}

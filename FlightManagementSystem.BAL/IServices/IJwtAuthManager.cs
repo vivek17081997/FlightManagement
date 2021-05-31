@@ -12,10 +12,10 @@ namespace FlightManagementSystem.BAL.IServices
 	public interface IJwtAuthManager
 	{
         IImmutableDictionary<string, RefreshToken> UsersRefreshTokensReadOnlyDictionary { get; }
-        JwtAuthResponseModel GenerateTokens(string userName, Claim[] claims, DateTime now);
+        JwtAuthResponseModel GenerateTokens(string email, Claim[] claims, DateTime now);
         JwtAuthResponseModel Refresh(string refreshToken, string accessToken, DateTime now);
         void RemoveExpiredRefreshTokens(DateTime now);
-        void RemoveRefreshTokenByUserName(string userName);
+        void RemoveRefreshTokenByEmail(string email);
         (ClaimsPrincipal, JwtSecurityToken) DecodeJwtToken(string token);
     }
 }

@@ -5,12 +5,3 @@ C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightMangementSy
 C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightMangementSystem.Models\obj\Debug\netcoreapp3.1\FlightMangementSystem.Models.AssemblyInfo.cs
 C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightMangementSystem.Models\obj\Debug\netcoreapp3.1\FlightMangementSystem.Models.dll
 C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightMangementSystem.Models\obj\Debug\netcoreapp3.1\FlightMangementSystem.Models.pdb
-E:\MachineExercise\FlightManagement\FlightMangementSystem.Models\bin\Debug\netcoreapp3.1\FlightMangementSystem.Models.deps.json
-E:\MachineExercise\FlightManagement\FlightMangementSystem.Models\bin\Debug\netcoreapp3.1\FlightMangementSystem.Models.dll
-E:\MachineExercise\FlightManagement\FlightMangementSystem.Models\bin\Debug\netcoreapp3.1\FlightMangementSystem.Models.pdb
-E:\MachineExercise\FlightManagement\FlightMangementSystem.Models\obj\Debug\netcoreapp3.1\FlightMangementSystem.Models.csprojAssemblyReference.cache
-E:\MachineExercise\FlightManagement\FlightMangementSystem.Models\obj\Debug\netcoreapp3.1\FlightMangementSystem.Models.AssemblyInfoInputs.cache
-E:\MachineExercise\FlightManagement\FlightMangementSystem.Models\obj\Debug\netcoreapp3.1\FlightMangementSystem.Models.AssemblyInfo.cs
-E:\MachineExercise\FlightManagement\FlightMangementSystem.Models\obj\Debug\netcoreapp3.1\FlightMangementSystem.Models.csproj.CoreCompileInputs.cache
-E:\MachineExercise\FlightManagement\FlightMangementSystem.Models\obj\Debug\netcoreapp3.1\FlightMangementSystem.Models.dll
-E:\MachineExercise\FlightManagement\FlightMangementSystem.Models\obj\Debug\netcoreapp3.1\FlightMangementSystem.Models.pdb

@@ -53,9 +53,9 @@ namespace FlightManagementSystem.BAL.Services
         /// Removes the Refresh token by username
         /// </summary>
         /// <param name="userName"></param>
-        public void RemoveRefreshTokenByUserName(string userName)
+        public void RemoveRefreshTokenByEmail(string email)
         {
-            var refreshTokens = _usersRefreshTokens.Where(x => x.Value.UserName == userName).ToList();
+            var refreshTokens = _usersRefreshTokens.Where(x => x.Value.Email == email).ToList();
             foreach (var refreshToken in refreshTokens)
             {
                 _usersRefreshTokens.TryRemove(refreshToken.Key, out _);
@@ -69,9 +69,11 @@ namespace FlightManagementSystem.BAL.Services
         /// <param name="claims"></param>
         /// <param name="now"></param>
         /// <returns></returns>
-        public JwtAuthResponseModel GenerateTokens(string username, Claim[] claims, DateTime now)
+        public JwtAuthResponseModel GenerateTokens(string email, Claim[] claims, DateTime now)
         {
             var shouldAddAudienceClaim = string.IsNullOrWhiteSpace(claims?.FirstOrDefault(x => x.Type == JwtRegisteredClaimNames.Aud)?.Value);
+
+            //todo pass the issuer and the audiance from the appsetting
             var jwtToken = new JwtSecurityToken(
                 _jwtTokenConfig.Issuer,
                 shouldAddAudienceClaim ? _jwtTokenConfig.Audience : string.Empty,
@@ -82,7 +84,7 @@ namespace FlightManagementSystem.BAL.Services
 
             var refreshToken = new RefreshToken
             {
-                UserName = username,
+                Email = email,
                 TokenString = GenerateRefreshTokenString(),
                 ExpireAt = now.AddMinutes(_jwtTokenConfig.RefreshTokenExpiration)
             };
@@ -114,17 +116,17 @@ namespace FlightManagementSystem.BAL.Services
                 throw new SecurityTokenException("Invalid token");
             }
 
-            var userName = principal.Identity?.Name;
+            var email = principal.Identity?.Name;
             if (!_usersRefreshTokens.TryGetValue(refreshToken, out var existingRefreshToken))
             {
                 throw new SecurityTokenException("Invalid token");
             }
-            if (existingRefreshToken.UserName != userName || existingRefreshToken.ExpireAt < now)
+            if (existingRefreshToken.Email != email || existingRefreshToken.ExpireAt < now)
             {
                 throw new SecurityTokenException("Invalid token");
             }
 
-            return GenerateTokens(userName, principal.Claims.ToArray(), now); 
+            return GenerateTokens(email, principal.Claims.ToArray(), now); 
         }
 
 

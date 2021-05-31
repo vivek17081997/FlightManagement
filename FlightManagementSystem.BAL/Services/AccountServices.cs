@@ -10,14 +10,20 @@ namespace FlightManagementSystem.BAL.Services
 	{
         private readonly ILogger<AccountServices> _logger;
 
-
+        /// <summary>
+        /// temp users that can login into the application
+        /// </summary>
         private readonly IDictionary<string, string> _users = new Dictionary<string, string>
         {
-            { "test1", "password1" },
-            { "test2", "password2" },
-            { "admin", "securePassword" }
+            { "test@yopmail.com", "Test@123" },
+            { "vivekv@yopmail.com", "Vivek@123" },
+            { "admin@yopmail.com", "Admin@123" }
         };
         
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="logger"></param>
         public AccountServices(ILogger<AccountServices> logger)
         {
             _logger = logger;
@@ -31,18 +37,26 @@ namespace FlightManagementSystem.BAL.Services
         /// <returns></returns>
         public bool IsValidUserCredentials(string email, string password)
         {
-            _logger.LogInformation($"Validating user [{email}]");
-            if (string.IsNullOrWhiteSpace(email))
-            {
-                return false;
-            }
+			try
+			{
+				_logger.LogInformation($"Validating user [{email}]");
+				if (string.IsNullOrWhiteSpace(email))
+				{
+					return false;
+				}
 
-            if (string.IsNullOrWhiteSpace(password))
-            {
-                return false;
-            }
+				if (string.IsNullOrWhiteSpace(password))
+				{
+					return false;
+				}
 
-            return _users.TryGetValue(email, out var p) && p == password;
+				return _users.TryGetValue(email, out var p) && p == password;
+			}
+			catch (Exception ex)
+			{
+                _logger.LogInformation($"Exception : {ex.Message}");
+                throw;
+			}
         }
 
         /// <summary>
@@ -52,7 +66,15 @@ namespace FlightManagementSystem.BAL.Services
         /// <returns></returns>
         public bool IsAnExistingUser(string email)
         {
-            return _users.ContainsKey(email);
+			try
+			{
+				return _users.ContainsKey(email);
+			}
+			catch (Exception ex)
+			{
+                _logger.LogInformation($"Exception : {ex.Message}");
+                throw;
+			}
         }
 
         /// <summary>
@@ -62,17 +84,25 @@ namespace FlightManagementSystem.BAL.Services
         /// <returns></returns>
         public string GetUserRole(string email)
         {
-            if (!IsAnExistingUser(email))
-            {
-                return string.Empty;
-            }
+			try
+			{
+				if (!IsAnExistingUser(email))
+				{
+					return string.Empty;
+				}
 
-            if (email == "admin")
-            {
-                return UserRoles.Admin;
-            }
+				if (email == "admin@yopmail.com")
+				{
+					return UserRoles.Admin;
+				}
 
-            return UserRoles.Customer;
+				return UserRoles.Customer;
+			}
+			catch (Exception ex)
+			{
+                _logger.LogInformation($"Exception : {ex.Message}");
+                throw;
+			}
         }
 
         /// <summary>

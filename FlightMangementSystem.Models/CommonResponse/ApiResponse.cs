@@ -19,9 +19,7 @@ namespace FlightMangementSystem.Models.CommonResponse
         }
 
         public HttpStatusCode ResponseStatusCode { get; set; }
-
-        public T ResponseData { get; set; }
-
         public string ResponseMessage { get; set; }
+        public T ResponseData { get; set; }
     }
 }
