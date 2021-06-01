@@ -8,20 +8,10 @@ using System.Linq;
 
 namespace FlightManagementSystem.BAL.Services
 {
-	public class AccountServices: IAccountServices
+	public class AccountServices: IAccountServices,IDisposable
 	{
         private readonly ILogger<AccountServices> _logger;
         private readonly ApplicationDbContext _context;
-
-        ///// <summary>
-        ///// temp users that can login into the application
-        ///// </summary>
-        //private readonly IDictionary<string, string> _users = new Dictionary<string, string>
-        //{
-        //    { "test@yopmail.com", "Test@123" },
-        //    { "vivekv@yopmail.com", "Vivek@123" },
-        //    { "admin@yopmail.com", "Admin@123" }
-        //};
         
         /// <summary>
         /// constructor
@@ -106,9 +96,8 @@ namespace FlightManagementSystem.BAL.Services
 				{
 					return false;
 				}
-                //todo check for the user credential and encode and  decode the credentials
-                //return _users.TryGetValue(email, out var p) && p == password;
-                return false;
+               //todo add the credential in the encrtion and decrpt and check the 
+                return true;
 			}
 			catch (Exception ex)
 			{
@@ -164,9 +153,16 @@ namespace FlightManagementSystem.BAL.Services
         }
 
         /// <summary>
-        /// User Roles to be claimed the users
+        /// will be disposing the variable which will be not in use 
         /// </summary>
-        public static class UserRoles
+		public void Dispose()
+		{
+		}
+
+		/// <summary>
+		/// User Roles to be claimed the users
+		/// </summary>
+		public static class UserRoles
         {
             public const string Admin = nameof(Admin);
             public const string Customer = nameof(Customer);

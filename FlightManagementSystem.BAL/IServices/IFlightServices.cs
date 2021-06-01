@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FlightManagementSystem.BAL.IServices
 {
-	interface IFlightServices
+	 public interface IFlightServices
 	{
 	}
 }

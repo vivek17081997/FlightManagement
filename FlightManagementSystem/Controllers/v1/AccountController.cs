@@ -17,16 +17,17 @@ using System.Threading.Tasks;
 
 namespace FlightManagementSystem.Controllers.v1
 {
-
-	[Route("api/v1/[controller]")]
+	[Route(Constants.ApiVersion1Route)]
 	public class AccountController : BaseController
 	{
+		#region Variables
 		ApiResponse<LoginResponseModel> _apiLoginResponse = null;
 		private readonly ILogger<AccountController> _logger;
 		private readonly IAccountServices _accountService;
 		private readonly IJwtAuthManager _jwtAuthManager;
+		#endregion
 
-
+		#region Constructor
 		public AccountController(ILogger<AccountController> logger, IAccountServices accountService, IJwtAuthManager jwtAuthManager)
 		{
 			_logger = logger;
@@ -34,6 +35,9 @@ namespace FlightManagementSystem.Controllers.v1
 			_jwtAuthManager = jwtAuthManager;
 		}
 
+		#endregion
+
+		#region API Methods
 		/// <summary>
 		/// Login API
 		/// </summary>
@@ -61,6 +65,9 @@ namespace FlightManagementSystem.Controllers.v1
 
 				if (!_accountService.IsValidUserCredentials(request.Email, request.Password))
 				{
+					_apiLoginResponse.ResponseMessage = "Unauthorized User";
+					_apiLoginResponse.ResponseData = null;
+					_apiLoginResponse.ResponseStatusCode = HttpStatusCode.Unauthorized;
 					return Unauthorized();
 				}
 
@@ -134,6 +141,6 @@ namespace FlightManagementSystem.Controllers.v1
 				return Unauthorized(e.Message);
 			}
 		}
-
+		#endregion
 	}
 }

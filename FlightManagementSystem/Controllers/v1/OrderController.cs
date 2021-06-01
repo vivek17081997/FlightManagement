@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using FlightManagementSystem.Utilities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -7,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace FlightManagementSystem.Controllers.v1
 {
-	[Route("api/v1/[controller]")]
+	[Route(Constants.ApiVersion1Route)]
 	public class OrderController : BaseController
 	{
+
 	}
 }

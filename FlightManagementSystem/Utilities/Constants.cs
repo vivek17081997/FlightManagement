@@ -9,6 +9,7 @@ namespace FlightManagementSystem.Utilities
 	{
 		#region for api routes constants 
 
+		public const string ApiVersion1Route = "api/v1/[controller]";
 		public const string LoginRoute = "Login";
 		public const string RegisterRoute = "Register";
 		public const string RefreshToken = "refresh-token";
