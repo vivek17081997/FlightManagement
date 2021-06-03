@@ -15,7 +15,18 @@ namespace FlightManagementSystem.DAL
         {
         }
 
+		public ApplicationDbContext():base()
+		{
+
+		}
+
         public virtual DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public virtual DbSet<ApplicationRole> ApplicationRoles { get; set; }
+        public virtual DbSet<City> Cities { get; set; }
+        public virtual DbSet<Country> Countries { get; set; }
+        public virtual DbSet<FlightDetail> FlightDetails { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+        public virtual DbSet<State> States { get; set; }
+        public virtual DbSet<TransactionDetail> TransactionDetails { get; set; }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vivek\\Desktop\\Machine Exercise\\FlightManagementSystem\\FlightManagementSystem.BAL\\FlightManagementSystem.BAL.csproj": {}
+    "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem.BAL\\FlightManagementSystem.BAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vivek\\Desktop\\Machine Exercise\\FlightManagementSystem\\FlightManagementSystem.BAL\\FlightManagementSystem.BAL.csproj": {
+    "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem.BAL\\FlightManagementSystem.BAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vivek\\Desktop\\Machine Exercise\\FlightManagementSystem\\FlightManagementSystem.BAL\\FlightManagementSystem.BAL.csproj",
+        "projectUniqueName": "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem.BAL\\FlightManagementSystem.BAL.csproj",
         "projectName": "FlightManagementSystem.BAL",
-        "projectPath": "C:\\Users\\Vivek\\Desktop\\Machine Exercise\\FlightManagementSystem\\FlightManagementSystem.BAL\\FlightManagementSystem.BAL.csproj",
+        "projectPath": "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem.BAL\\FlightManagementSystem.BAL.csproj",
         "packagesPath": "C:\\Users\\Vivek\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vivek\\Desktop\\Machine Exercise\\FlightManagementSystem\\FlightManagementSystem.BAL\\obj\\",
+        "outputPath": "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem.BAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
@@ -31,7 +31,15 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem.DAL\\FlightManagementSystem.DAL.csproj": {
+                "projectPath": "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem.DAL\\FlightManagementSystem.DAL.csproj"
+              },
+              "E:\\MachineExercise\\FlightManagement\\FlightMangementSystem.Models\\FlightMangementSystem.Models.csproj": {
+                "projectPath": "E:\\MachineExercise\\FlightManagement\\FlightMangementSystem.Models\\FlightMangementSystem.Models.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -42,6 +50,25 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.11.1, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.11.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -57,7 +84,147 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem.DAL\\FlightManagementSystem.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem.DAL\\FlightManagementSystem.DAL.csproj",
+        "projectName": "FlightManagementSystem.DAL",
+        "projectPath": "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem.DAL\\FlightManagementSystem.DAL.csproj",
+        "packagesPath": "C:\\Users\\Vivek\\.nuget\\packages\\",
+        "outputPath": "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem.DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Vivek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\MachineExercise\\FlightManagement\\FlightMangementSystem.Models\\FlightMangementSystem.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\MachineExercise\\FlightManagement\\FlightMangementSystem.Models\\FlightMangementSystem.Models.csproj",
+        "projectName": "FlightMangementSystem.Models",
+        "projectPath": "E:\\MachineExercise\\FlightManagement\\FlightMangementSystem.Models\\FlightMangementSystem.Models.csproj",
+        "packagesPath": "C:\\Users\\Vivek\\.nuget\\packages\\",
+        "outputPath": "E:\\MachineExercise\\FlightManagement\\FlightMangementSystem.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Vivek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

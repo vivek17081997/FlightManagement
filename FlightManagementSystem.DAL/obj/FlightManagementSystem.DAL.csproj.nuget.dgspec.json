@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vivek\\Desktop\\Machine Exercise\\FlightManagementSystem\\FlightManagementSystem.DAL\\FlightManagementSystem.DAL.csproj": {}
+    "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem.DAL\\FlightManagementSystem.DAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vivek\\Desktop\\Machine Exercise\\FlightManagementSystem\\FlightManagementSystem.DAL\\FlightManagementSystem.DAL.csproj": {
+    "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem.DAL\\FlightManagementSystem.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vivek\\Desktop\\Machine Exercise\\FlightManagementSystem\\FlightManagementSystem.DAL\\FlightManagementSystem.DAL.csproj",
+        "projectUniqueName": "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem.DAL\\FlightManagementSystem.DAL.csproj",
         "projectName": "FlightManagementSystem.DAL",
-        "projectPath": "C:\\Users\\Vivek\\Desktop\\Machine Exercise\\FlightManagementSystem\\FlightManagementSystem.DAL\\FlightManagementSystem.DAL.csproj",
+        "projectPath": "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem.DAL\\FlightManagementSystem.DAL.csproj",
         "packagesPath": "C:\\Users\\Vivek\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vivek\\Desktop\\Machine Exercise\\FlightManagementSystem\\FlightManagementSystem.DAL\\obj\\",
+        "outputPath": "E:\\MachineExercise\\FlightManagement\\FlightManagementSystem.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
@@ -31,6 +31,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -42,6 +43,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
@@ -75,14 +77,11 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

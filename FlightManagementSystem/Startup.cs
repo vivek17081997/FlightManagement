@@ -39,6 +39,12 @@ namespace FlightManagementSystem
 			DependencyInjectionConfig.ConfigureServices(Configuration, services);
 
 			services.AddControllers();
+
+			services.AddCors(options =>
+			{
+				options.AddPolicy("AllowAll",
+					builder => { builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader(); });
+			});
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,12 +58,14 @@ namespace FlightManagementSystem
 			app.UseHttpsRedirection();
 
 			app.UseRouting();
-
+			app.UseCors("AllowAll");
 			app.UseAuthentication();
 			app.UseAuthorization();
 
+			
 			app.UseSwagger();
-			app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "Flight Management System"));
+			app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "Flight Management Systems"));
+
 
 			app.UseEndpoints(endpoints =>
 			{

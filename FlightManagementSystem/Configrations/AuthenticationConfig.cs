@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using FlightMangementSystem.Models.ResponseModel.AccountModels;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Text;
 
 namespace FlightManagementSystem.Configrations
@@ -10,29 +12,32 @@ namespace FlightManagementSystem.Configrations
 	{
 		public static void ConfigureServices(IConfiguration Configuration, IServiceCollection services)
 		{
-			// Adding Authentication  
-			services.AddAuthentication(options =>
-			{
-				options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-				options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-				options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-			})
 
-			// Adding Jwt Bearer  
-			.AddJwtBearer(options =>
+			JwtTokenConfigModel jwtTokenConfig = Configuration.GetSection("jwtTokenConfig").Get<JwtTokenConfigModel>();
+			services.AddSingleton(jwtTokenConfig);
 
+			services.AddAuthentication(x =>
 			{
-				options.SaveToken = true;
-				options.RequireHttpsMetadata = false;
-				options.TokenValidationParameters = new TokenValidationParameters()
+				x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+				x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+			}).AddJwtBearer(x =>
+			{
+				x.RequireHttpsMetadata = true;
+				x.SaveToken = true;
+				x.TokenValidationParameters = new TokenValidationParameters
 				{
 					ValidateIssuer = true,
+					ValidIssuer = jwtTokenConfig.Issuer,
+					ValidateIssuerSigningKey = true,
+					IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtTokenConfig.Secret)),
+					ValidAudience = jwtTokenConfig.Audience,
 					ValidateAudience = true,
-					ValidAudience = Configuration["JWT:ValidAudience"],
-					ValidIssuer = Configuration["JWT:ValidIssuer"],
-					IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"]))
+					ValidateLifetime = true,
+					ClockSkew = TimeSpan.FromMinutes(1)
 				};
 			});
+
+
 		}
 	}
 }
