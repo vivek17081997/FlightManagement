@@ -54,7 +54,7 @@ namespace FlightManagementSystem.Controllers.v1
 			}
 			try
 			{
-				
+
 				if (!ModelState.IsValid)
 				{
 					_apiLoginResponse.ResponseMessage = Constants.Invalid_LoginRequest_Parameters;
@@ -63,44 +63,45 @@ namespace FlightManagementSystem.Controllers.v1
 					return BadRequest(_apiLoginResponse);
 				}
 
-				if (!_accountService.IsValidUserCredentials(request.Email, request.Password))
+				if (_accountService.IsValidUserCredentials(request.Email, request.Password))
+				{
+					string role = _accountService.GetUserRole(request.Email);
+
+					var claims = new[]
+					{
+					new Claim(ClaimTypes.Name,request.Email),
+					new Claim(ClaimTypes.Email,request.Email),
+					new Claim(ClaimTypes.Role, role)
+					};
+
+					var jwtResult = _jwtAuthManager.GenerateTokens(request.Email, claims, DateTime.Now);
+					LoginResponseModel model = new LoginResponseModel
+					{
+						Email = request.Email,
+						UserRole = role,
+						Token = jwtResult.AccessToken,
+						RefreshToken = jwtResult.RefreshToken.TokenString
+					};
+					_apiLoginResponse.ResponseStatusCode = HttpStatusCode.OK;
+					_apiLoginResponse.ResponseMessage = "Success";
+					_apiLoginResponse.ResponseData = model;
+										
+				}
+				else
 				{
 					_apiLoginResponse.ResponseMessage = "Unauthorized User";
 					_apiLoginResponse.ResponseData = null;
 					_apiLoginResponse.ResponseStatusCode = HttpStatusCode.Unauthorized;
-					return Unauthorized();
 				}
 
-				string role = _accountService.GetUserRole(request.Email);
-
-				var claims = new[]
-				{
-					new Claim(ClaimTypes.Name,request.Email),
-					new Claim(ClaimTypes.Email,request.Email),
-					new Claim(ClaimTypes.Role, role)
-				};
-
-				var jwtResult = _jwtAuthManager.GenerateTokens(request.Email, claims, DateTime.Now);
-				_logger.LogInformation($"Email [{request.Email}] logged in the system.");
-				LoginResponseModel model = new LoginResponseModel
-				{
-					Email = request.Email,
-					UserRole = role,
-					Token = jwtResult.AccessToken,
-					RefreshToken = jwtResult.RefreshToken.TokenString
-				};
-				_apiLoginResponse.ResponseStatusCode = HttpStatusCode.OK;
-				_apiLoginResponse.ResponseMessage = "Success";
-				_apiLoginResponse.ResponseData = model;
-
-				return Ok(_apiLoginResponse) ;
+				return Ok(_apiLoginResponse);
 
 			}
 			catch (Exception ex)
 			{
+				_logger.LogInformation($"Exception: [{ex.Message}] with the ");
 				return BadRequest(ex.Message.ToString());
 			}
-
 		}
 
 
@@ -110,8 +111,8 @@ namespace FlightManagementSystem.Controllers.v1
 		/// <param name="request"></param>
 		/// <returns></returns>
 		[Route(Constants.RefreshToken)]
-		[AllowAnonymous]
 		[HttpPost]
+		[Authorize]
 		public async Task<ActionResult> RefreshToken([FromBody] RefreshTokenRequestModel request)
 		{
 			try

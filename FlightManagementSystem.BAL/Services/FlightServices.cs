@@ -33,59 +33,91 @@ namespace FlightManagementSystem.BAL.Services
 		/// </summary>
 		/// <param name="flightDetail"></param>
 		/// <returns></returns>
-		public List<FlightAddResponseModel> AddFlightDetailMethod(FlightDetailRequest flightDetail)
+		public List<FlightAddResponseModel> AddFlightDetailMethod(FlightDetailRequest flightDetail, out bool isAdded)
 		{
-			using (transaction = (DbContextTransaction)_context.Database.BeginTransaction())
+			//todo add the transactions for the operation
+			try
 			{
-				try
+				var flight = _context.FlightDetails.AddAsync(
+					new FlightDetail()
+					{
+						FlightCompany = flightDetail.FlightCompany,
+						FlightNumber = flightDetail.FlightNumber,
+						TotalSeats = flightDetail.TotalSeats,
+						TicketPrice = flightDetail.TicketPrice,
+						CreatedBy = 5,
+						CreatedDate = DateTime.Now,
+						ModifiedDate = DateTime.Now,
+						ModifyBy = 5,
+						IsActive = true
+					});
+
+				int result = _context.SaveChanges();
+
+				if (result > 0)
 				{
-					var flight = _context.FlightDetails.AddAsync(
-						new FlightDetail()
-						{
-							FlightCompany = flightDetail.FlightCompany,
-							FlightNumber = flightDetail.FlightNumber,
-							TotalSeats = flightDetail.TotalSeats,
-							TicketPrice = flightDetail.TicketPrice,
-							CreatedBy = 5,
-							CreatedDate = DateTime.Now,
-							ModifiedDate = DateTime.Now,
-							ModifyBy = 5,
-							IsActive = true
-						});
-
-					int result = _context.SaveChanges();
-
-					if (result > 0)
-						transaction.Commit();
-					else
-						transaction.Rollback();
-
-					return _context.FlightDetails.Where(x => x.IsActive == true).Select(y =>
-						new FlightAddResponseModel()
-						{
-							FlightId = y.FlightId,
-							FlightCompany = y.FlightCompany,
-							FlightNumber = y.FlightNumber,
-							TicketPrice = y.TicketPrice,
-							TotalSeats = y.TotalSeats,
-						}
-						).ToList();
+					isAdded = true;
 				}
-				catch (Exception ex)
+				else
 				{
-					transaction.Rollback();
-					_logger.LogInformation($"Exception : {ex.Message}");
-					throw;
+					isAdded = false;
 				}
+
+				return _context.FlightDetails.Where(x => x.IsActive == true).Select(y =>
+					new FlightAddResponseModel()
+					{
+						FlightId = y.FlightId,
+						FlightCompany = y.FlightCompany,
+						FlightNumber = y.FlightNumber,
+						TicketPrice = y.TicketPrice,
+						TotalSeats = y.TotalSeats,
+					}
+					).ToList();
+			}
+			catch (Exception ex)
+			{
+				_logger.LogInformation($"Exception : {ex.Message}");
+				throw;
 			}
 
 		}
+
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="flightDetail"></param>
+		/// <returns></returns>
+		public List<FlightAddResponseModel> GetAllFlights()
+		{
+			try
+			{
+				return _context.FlightDetails.Where(x => x.IsActive == true).Select(y =>
+					new FlightAddResponseModel()
+					{
+						FlightId = y.FlightId,
+						FlightCompany = y.FlightCompany,
+						FlightNumber = y.FlightNumber,
+						TicketPrice = y.TicketPrice,
+						TotalSeats = y.TotalSeats,
+					}
+					).ToList();
+			}
+			catch (Exception ex)
+			{
+				_logger.LogInformation($"Exception : {ex.Message}");
+				throw;
+			}
+
+		}
+
+
 		/// <summary>
 		/// Dispose the objects
 		/// </summary>
 		public void Dispose()
 		{
-			throw new NotImplementedException();
+
 		}
 
 	}

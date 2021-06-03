@@ -96,9 +96,8 @@ namespace FlightManagementSystem.BAL.Services
 				{
 					return false;
 				}
-               //todo add the credential in the encrtion and decrpt and check the 
-                return true;
-			}
+                return CheckUserExist(email);
+            }
 			catch (Exception ex)
 			{
                 _logger.LogInformation($"Exception : {ex.Message}");

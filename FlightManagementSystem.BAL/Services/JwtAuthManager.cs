@@ -89,7 +89,7 @@ namespace FlightManagementSystem.BAL.Services
                 ExpireAt = now.AddMinutes(_jwtTokenConfig.RefreshTokenExpiration)
             };
 
-            //todo
+            //todo vivekv add or update the token so that it can be accessed for futer use
             //_usersRefreshTokens.AddOrUpdate(refreshToken.TokenString, refreshToken, (_, _) => refreshToken);
 
             return new JwtAuthResponseModel
@@ -117,14 +117,18 @@ namespace FlightManagementSystem.BAL.Services
             }
 
             var email = principal.Identity?.Name;
-            if (!_usersRefreshTokens.TryGetValue(refreshToken, out var existingRefreshToken))
+
+            //todo vivek cheking the token and updating that
+            //if (!_usersRefreshTokens.TryGetValue(refreshToken, out var existingRefreshToken))
+            if (_usersRefreshTokens.TryGetValue(refreshToken, out var existingRefreshToken))
             {
                 throw new SecurityTokenException("Invalid token");
             }
-            if (existingRefreshToken.Email != email || existingRefreshToken.ExpireAt < now)
-            {
-                throw new SecurityTokenException("Invalid token");
-            }
+
+            //if (existingRefreshToken.Email != email || existingRefreshToken.ExpireAt < now)
+            //{
+            //    throw new SecurityTokenException("Invalid token");
+            //}
 
             return GenerateTokens(email, principal.Claims.ToArray(), now); 
         }
