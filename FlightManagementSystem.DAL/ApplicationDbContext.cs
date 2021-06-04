@@ -28,5 +28,7 @@ namespace FlightManagementSystem.DAL
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<State> States { get; set; }
         public virtual DbSet<TransactionDetail> TransactionDetails { get; set; }
+        public virtual DbSet<AirportDetail> Airports { get; set; }
+        public virtual DbSet<DepartureDetails> DepartureDetails { get; set; }
     }
 }

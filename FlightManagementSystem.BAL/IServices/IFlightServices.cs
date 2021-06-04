@@ -10,7 +10,8 @@ namespace FlightManagementSystem.BAL.IServices
 	public interface IFlightServices
 	{
 		List<FlightAddResponseModel> AddFlightDetailMethod(FlightDetailRequest flightDetail,out bool isAdded);
-
 		List<FlightAddResponseModel> GetAllFlights();
+		List<SearchedFlightDetailsResponseModel> SearchFlight(FlightSearchRequestModel requestModel);
+		
 	}
 }

@@ -23,14 +23,14 @@ namespace FlightManagementSystem.Controllers.v1
 	{
         private readonly ILogger<FlightController> _logger;
         private readonly IFlightServices _services;
-        ApiResponse<List<FlightAddResponseModel>> _apiAddResponse = null;
-
+        private ApiResponse<List<FlightAddResponseModel>> _apiAddResponse = null;
+        private ApiResponse<List<SearchedFlightDetailsResponseModel>> _apiSearchResponse = null;
         /// <summary>
         /// Flight Controller
         /// </summary>
         /// <param name="services"></param>
         /// <param name="logger"></param>
-		public FlightController(IFlightServices services, ILogger<FlightController> logger)
+        public FlightController(IFlightServices services, ILogger<FlightController> logger)
 		{
             _logger = logger;
             _services = services;
@@ -80,22 +80,20 @@ namespace FlightManagementSystem.Controllers.v1
                 _apiAddResponse.ResponseStatusCode = HttpStatusCode.InternalServerError;
                 _apiAddResponse.ResponseMessage = $"Exception : {ex.Message}";
                 _apiAddResponse.ResponseData = null;
-                _logger.LogInformation($"Exception : {ex.Message}");
+                _logger.LogInformation($"Exception : {ex.Message}",ex);
                 return Ok(_apiAddResponse); 
             }
         }
 
-
-
-        /// <summary>
-        /// Get all Flight Detail API
-        /// </summary>
-        /// <param name="request"></param>
-        /// <returns></returns>
-        [Route("GetFlights")]
+		/// <summary>
+		/// Get all Flight Detail API
+		/// </summary>
+		/// <param name="request"></param>
+		/// <returns></returns>
+		[Route("GetFlights")]
         [HttpGet]
         [AllowAnonymous]
-        public ActionResult GetAllFlights( )
+        public ActionResult GetAllFlights()
         {
             if (_apiAddResponse == null)
                 _apiAddResponse = new ApiResponse<List<FlightAddResponseModel>>();
@@ -130,10 +128,60 @@ namespace FlightManagementSystem.Controllers.v1
                 _apiAddResponse.ResponseStatusCode = HttpStatusCode.InternalServerError;
                 _apiAddResponse.ResponseMessage = $"Exception : {ex.Message}";
                 _apiAddResponse.ResponseData = null;
-                _logger.LogInformation($"Exception : {ex.Message}");
+                _logger.LogInformation($"Exception : {ex.Message}",ex);
                 return Ok(_apiAddResponse);
             }
         }
+
+        /// <summary>
+        /// Search Flight
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [Route("SearchFlight")]
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult SearchFlight([FromBody] FlightSearchRequestModel request)
+		{
+            if (_apiSearchResponse == null)
+                _apiSearchResponse = new ApiResponse<List<SearchedFlightDetailsResponseModel>>();
+            
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    _apiSearchResponse.ResponseMessage = "Invalid Request";
+                    _apiSearchResponse.ResponseData = null;
+                    _apiSearchResponse.ResponseStatusCode = HttpStatusCode.BadRequest;
+                    return BadRequest(_apiSearchResponse);
+                }
+
+                var result = _services.SearchFlight(request);
+
+                if (result != null)
+                {
+                    _apiSearchResponse.ResponseStatusCode = HttpStatusCode.OK;
+                    _apiSearchResponse.ResponseMessage = "Success";
+                    _apiSearchResponse.ResponseData = result;
+                }
+                else
+                {
+                    _apiSearchResponse.ResponseStatusCode = HttpStatusCode.OK;
+                    _apiSearchResponse.ResponseMessage = "No data Found";
+                    _apiSearchResponse.ResponseData = result;
+                }
+                return Ok(_apiAddResponse);
+            }
+            catch (Exception ex)
+            {
+                _apiSearchResponse.ResponseStatusCode = HttpStatusCode.InternalServerError;
+                _apiSearchResponse.ResponseMessage = $"Exception : {ex.Message}";
+                _apiSearchResponse.ResponseData = null;
+                _logger.LogInformation($"Exception : {ex.Message}",ex);
+                return Ok(_apiSearchResponse);
+            }
+        }
+
 
     }
 }
