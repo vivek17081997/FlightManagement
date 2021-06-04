@@ -76,7 +76,7 @@ namespace FlightManagementSystem.BAL.Services
 			}
 			catch (Exception ex)
 			{
-				_logger.LogInformation($"Exception : {ex.Message}");
+				_logger.LogInformation($"Exception : {ex.Message}",ex);
 				throw;
 			}
 
@@ -92,20 +92,20 @@ namespace FlightManagementSystem.BAL.Services
 		{
 			try
 			{
-				return _context.FlightDetails.Where(x => x.IsActive == true).Select(y =>
+				return _context.FlightDetails.Where(x => x.IsActive == true).Select(data =>
 					new FlightAddResponseModel()
 					{
-						FlightId = y.FlightId,
-						FlightCompany = y.FlightCompany,
-						FlightNumber = y.FlightNumber,
-						TicketPrice = y.TicketPrice,
-						TotalSeats = y.TotalSeats,
+						FlightId = data.FlightId,
+						FlightCompany = data.FlightCompany,
+						FlightNumber = data.FlightNumber,
+						TicketPrice = data.TicketPrice,
+						TotalSeats = data.TotalSeats
 					}
 					).ToList();
 			}
 			catch (Exception ex)
 			{
-				_logger.LogInformation($"Exception : {ex.Message}");
+				_logger.LogInformation($"Exception : {ex.Message}",ex);
 				throw;
 			}
 
@@ -120,5 +120,49 @@ namespace FlightManagementSystem.BAL.Services
 
 		}
 
+		/// <summary>
+		/// Search Flight
+		/// </summary>
+		/// <param name="requestModel"></param>
+		/// <returns></returns>
+		public List<SearchedFlightDetailsResponseModel> SearchFlight(FlightSearchRequestModel requestModel)
+		{
+			try
+			{
+				var collection = (from Flight in _context.FlightDetails
+								  join Departure in _context.DepartureDetails on Flight.FlightId equals Departure.FlightId
+								  join Airport in _context.Airports on Departure.FlightId equals Airport.AirportId
+								  select new SearchedFlightDetailsResponseModel
+								  {
+									 FlightId     = Flight.FlightId,
+									 FlightNumber= Flight.FlightNumber,
+									 FlightCompany= Flight.FlightCompany,
+									 TotalSeats = Flight.TotalSeats,
+									 TicketPrice = Flight.TicketPrice,
+									  DepatureDate = Departure.DepatureDate.Date,
+									  DepatureTime = Departure.DepatureDate,
+									  From= Departure.AirPortIdFrom,
+									  To = Departure.AirPortIdTo,
+									  AirportName = Airport.AirportName,
+									  AirportId=Airport.AirportId
+								  }).OrderBy(x=> x.DepatureDate.TimeOfDay).ToList();
+
+				//todo modify the searching
+				var searchResult = collection.Where(flight => flight.FlightNumber == requestModel.FlightNumber || flight.FlightCompany == requestModel.FlightCompany || flight.DepatureDate.Date == requestModel.DepartureDatetime.Date || flight.DepatureDate.TimeOfDay == requestModel.DepartureDatetime.TimeOfDay).ToList();
+				
+				int pageNo = requestModel.PageNo;
+
+				int recordsPerPage = 10;
+
+				dynamic result = searchResult.Skip(pageNo * recordsPerPage).Take(10).ToList();
+
+				return result;
+			}
+			catch (Exception ex)
+			{
+				_logger.LogInformation($"Exception : {ex.Message}",ex);
+				throw ;
+			}
+		}
 	}
 }

@@ -47,7 +47,7 @@ namespace FlightManagementSystem.BAL.Services
 			}
 			catch (Exception ex)
 			{
-                _logger.LogInformation($"Exception : {ex.Message}");
+                _logger.LogInformation($"Exception : {ex.Message}",ex);
                 throw;
 			}
 		}
@@ -72,7 +72,7 @@ namespace FlightManagementSystem.BAL.Services
             }
 			catch (Exception ex )
 			{
-                _logger.LogInformation($"Exception : {ex.Message}");
+                _logger.LogInformation($"Exception : {ex.Message}",ex);
                 throw;
 			}
 		}
@@ -100,7 +100,7 @@ namespace FlightManagementSystem.BAL.Services
             }
 			catch (Exception ex)
 			{
-                _logger.LogInformation($"Exception : {ex.Message}");
+                _logger.LogInformation($"Exception : {ex.Message}",ex);
                 throw;
 			}
         }
@@ -118,7 +118,7 @@ namespace FlightManagementSystem.BAL.Services
             }
 			catch (Exception ex)
 			{
-                _logger.LogInformation($"Exception : {ex.Message}");
+                _logger.LogInformation($"Exception : {ex.Message}",ex);
                 throw;
 			}
         }
@@ -146,7 +146,7 @@ namespace FlightManagementSystem.BAL.Services
 			}
 			catch (Exception ex)
 			{
-                _logger.LogInformation($"Exception : {ex.Message}");
+                _logger.LogInformation($"Exception : {ex.Message}",ex);
                 throw;
 			}
         }

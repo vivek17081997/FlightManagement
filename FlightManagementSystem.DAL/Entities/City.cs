@@ -10,6 +10,7 @@ namespace FlightManagementSystem.DAL.Entities
 		[Key]
 		public long CityId { get; set; }
 		public long StateId { get; set; }
+		public long CountryId { get; set; }
 		public string CityName { get; set; }
 	}
 }

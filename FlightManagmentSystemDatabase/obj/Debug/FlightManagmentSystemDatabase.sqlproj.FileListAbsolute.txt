@@ -3,3 +3,8 @@ C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagmentSy
 C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagmentSystemDatabase\bin\Debug\FlightManagmentSystemDatabase.pdb
 C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagmentSystemDatabase\obj\Debug\FlightManagmentSystemDatabase.dll
 C:\Users\Vivek\Desktop\Machine Exercise\FlightManagementSystem\FlightManagmentSystemDatabase\obj\Debug\FlightManagmentSystemDatabase.pdb
+E:\MachineExercise\FlightManagement\FlightManagmentSystemDatabase\bin\Debug\FlightManagmentSystemDatabase.dacpac
+E:\MachineExercise\FlightManagement\FlightManagmentSystemDatabase\bin\Debug\FlightManagmentSystemDatabase.dll
+E:\MachineExercise\FlightManagement\FlightManagmentSystemDatabase\bin\Debug\FlightManagmentSystemDatabase.pdb
+E:\MachineExercise\FlightManagement\FlightManagmentSystemDatabase\obj\Debug\FlightManagmentSystemDatabase.dll
+E:\MachineExercise\FlightManagement\FlightManagmentSystemDatabase\obj\Debug\FlightManagmentSystemDatabase.pdb
